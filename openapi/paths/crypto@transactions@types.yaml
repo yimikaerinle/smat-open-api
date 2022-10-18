@@ -1,0 +1,46 @@
+get:
+  tags:
+    - Transaction
+  operationId: generalInfo
+  summary: Returns an array of a given transactions per type
+  parameters:
+    - name: wealth_manager_id
+      in: query
+      description: Wealth Managers who triggered transaction
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: client_id
+      in: query
+      description: Client whose funds were used for the transaction
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: transaction_type
+      in: query
+      description: 'Type of transaction triggered ie on ramp, off tamp, swaps, etc.'
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+  responses:
+    '200':
+      description: Return specific detials on the transaction type
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TransactionType.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

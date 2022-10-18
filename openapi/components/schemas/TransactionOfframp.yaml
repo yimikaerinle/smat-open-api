@@ -1,0 +1,20 @@
+type: object
+required:
+  - token_id
+  - fiat_currency
+properties:
+  client_id:
+    type: integer
+    format: uid
+  wealth_manager_id:
+    type: integer
+    format: uid
+  bank_id:
+    type: integer
+    format: uid
+  fiat_currency:
+    type: string
+    format: string
+  token_id:
+    type: integer
+    format: integer

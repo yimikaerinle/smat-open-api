@@ -1,0 +1,10 @@
+type: object
+properties:
+  transaction_id:
+    type: integer
+    format: uuid
+    example: 423943
+  transaction_hex:
+    type: string
+    format: string
+    example: 2.2353444210782807e+76

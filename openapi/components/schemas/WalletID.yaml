@@ -1,0 +1,6 @@
+type: object
+properties:
+  walletAddress:
+    type: string
+    format: string
+    example: 1.0480672435017432e+48

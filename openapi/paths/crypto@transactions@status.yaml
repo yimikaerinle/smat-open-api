@@ -1,0 +1,27 @@
+put:
+  tags:
+    - Transaction
+  operationId: generalInfo
+  summary: Updates transaction status; ongoing or completed
+  requestBody:
+    description: Requests the update of a transaction's status.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TransactionStatus.yaml
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: ../components/schemas/Success.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

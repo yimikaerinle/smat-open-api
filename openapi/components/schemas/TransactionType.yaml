@@ -1,0 +1,20 @@
+type: object
+properties:
+  transaction_id:
+    type: integer
+    format: uid
+  client_approval:
+    type: string
+    format: string
+  wealth_manager_approval:
+    type: string
+    format: string
+  transaction_amount:
+    type: integer
+    format: integer
+  transaction_time:
+    type: string
+    format: string
+  transaction_status:
+    type: string
+    format: string

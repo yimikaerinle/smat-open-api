@@ -1,0 +1,25 @@
+post:
+  tags:
+    - Transaction
+  operationId: generalInfo
+  summary: Adds a new off ramp transaction
+  requestBody:
+    description: Requests transactions of a wealth manager by ID
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TransactionOfframp.yaml
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TransactionID.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

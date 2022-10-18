@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Token
+  operationId: TokenDescription
+  summary: Endpoint return non-price related data on cryptocurrency
+  parameters:
+    - name: token_id
+      in: query
+      description: Unique identifier of a given token.
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: integer
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: Object
+            $ref: ../components/schemas/TokenDescription.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '500':
+      $ref: ../components/responses/ServerError.yaml

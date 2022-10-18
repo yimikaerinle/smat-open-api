@@ -1,0 +1,6 @@
+type: object
+properties:
+  transaction_id:
+    type: integer
+    format: uuid
+    example: 23943

@@ -1,0 +1,18 @@
+type: object
+properties:
+  Token:
+    type: string
+    format: string
+    example: Solana
+  TokenPrice:
+    type: number
+    format: float
+    example: 60.54
+  TokenPriceCurrency:
+    type: string
+    format: string
+    example: USD
+  TokenPriceChange:
+    type: number
+    format: float
+    example: 5.45

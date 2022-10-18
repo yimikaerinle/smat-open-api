@@ -1,0 +1,17 @@
+type: object
+required:
+  - token_sell_id
+  - token_buy_id
+properties:
+  wealth_manager_id:
+    type: integer
+    format: uid
+  client_id:
+    type: integer
+    format: uid
+  token_sell_id:
+    type: integer
+    format: integer
+  token_buy_id:
+    type: integer
+    format: integer

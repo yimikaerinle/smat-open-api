@@ -1,0 +1,32 @@
+type: object
+required:
+  - token_staked_id
+  - token_buy_id
+properties:
+  transaction_id:
+    type: integer
+    format: uid
+  wealth_manager_id:
+    type: integer
+    format: uid
+  client_id:
+    type: integer
+    format: uid
+  token_staked_id:
+    type: string
+    format: string
+  token_amount:
+    type: integer
+    format: integer
+  token_lock_period:
+    type: integer
+    format: integer
+  staking_type:
+    type: string
+    format: string
+  transaction_type:
+    type: string
+    format: string
+  transaction_hex:
+    type: string
+    format: string

@@ -1,0 +1,26 @@
+type: object
+description: >-
+  AUMs will be ordered by {year,month} with the oldest first and will return
+  data for 24 months if available.***
+properties:
+  wealth_manager_currency:
+    type: string
+    format: string
+    example: USD
+  wealth_manager_aums:
+    type: object
+    properties:
+      year:
+        type: integer
+        format: integer
+        example: 2019
+      wealth_manager_aum:
+        type: number
+        format: float
+        example: 5054680.98
+      month:
+        type: integer
+        format: integer
+        example: 1
+        minimum: 6
+        maximum: 12

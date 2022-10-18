@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: SMAT API Documentation
+  description: API documentation for SMAT crypto backend
+  version: 3.0.0
+servers:
+  - url: 'https://api.example.com/'
+  - url: 'http://localhost:8080/'
+security:
+  - basicAuth: []
+tags:
+  - name: Wealth Manager
+  - name: Transaction
+  - name: Token
+paths:
+  /crypto/wealth_manager/create_address:
+    $ref: paths/crypto@wealth_manager@create_address.yaml
+  /crypto/wealth_managers/aum:
+    $ref: paths/crypto@wealth_managers@aum.yaml
+  /crypto/wealth_managers/aggregated_assets:
+    $ref: paths/crypto@wealth_managers@aggregated_assets.yaml
+  /crypto/transactions/status:
+    $ref: paths/crypto@transactions@status.yaml
+  /crypto/transactions/hex:
+    $ref: paths/crypto@transactions@hex.yaml
+  /crypto/transactions/types:
+    $ref: paths/crypto@transactions@types.yaml
+  /crypto/transactions/onramp:
+    $ref: paths/crypto@transactions@onramp.yaml
+  /crypto/transactions/offramp:
+    $ref: paths/crypto@transactions@offramp.yaml
+  /crypto/transactions/swap:
+    $ref: paths/crypto@transactions@swap.yaml
+  /crypto/transactions/staking:
+    $ref: paths/crypto@transactions@staking.yaml
+  /crypto/tokens/price:
+    $ref: paths/crypto@tokens@price.yaml
+  /crypto/token/details:
+    $ref: paths/crypto@token@details.yaml
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

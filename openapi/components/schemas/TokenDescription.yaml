@@ -1,0 +1,11 @@
+type: object
+properties:
+  Token:
+    type: string
+    format: string
+  TokenCode:
+    type: string
+    format: string
+  TokenLogo:
+    type: integer
+    format: integer

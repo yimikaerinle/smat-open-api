@@ -1,0 +1,10 @@
+type: object
+properties:
+  token_id:
+    type: integer
+    format: uuid
+    example: 173
+  token_amount:
+    type: integer
+    format: float
+    example: 500.45

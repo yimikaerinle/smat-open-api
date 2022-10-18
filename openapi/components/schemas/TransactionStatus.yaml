@@ -1,0 +1,10 @@
+type: object
+properties:
+  transaction_id:
+    type: integer
+    format: uuid
+    example: 423943
+  transaction_status:
+    type: string
+    format: string
+    example: Ongoing Transaction
