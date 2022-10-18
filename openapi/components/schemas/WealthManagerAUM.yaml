@@ -1,0 +1,18 @@
+type: object
+properties:
+  wealth_manager_id:
+    type: string
+    format: uuid
+    example: 435
+  wealth_manager_aum:
+    type: integer
+    format: integer
+    example: 500000000
+  wealth_manager_currency:
+    type: string
+    format: string
+    example: USD
+  month:
+    type: string
+    format: string
+    example: February

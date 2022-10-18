@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Wealth Manager
+  operationId: wealthManagerFinInfo
+  summary: Adds a new wallet for wealth manager's client
+  requestBody:
+    description: Sends a request to add a new wallet for the Wealth Manager
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/WalletRequest.yaml
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: ../components/schemas/Success.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '501':
+      $ref: ../components/responses/BadData.yaml
+    default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/Error.yaml

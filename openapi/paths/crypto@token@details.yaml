@@ -1,0 +1,33 @@
+get:
+  tags:
+    - Token
+  operationId: TokenDescription
+  summary: Endpoint return all data on cryptocurrency
+  requestBody:
+    description: 'Get token data; name, logo,'
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TokenDescription.yaml
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: ../components/schemas/Success.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '501':
+      $ref: ../components/responses/BadData.yaml
+    default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/Error.yaml

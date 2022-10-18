@@ -1,0 +1,20 @@
+type: object
+required:
+  - id
+  - wealth_manager_approval
+  - wealth_manager_id
+  - token_price
+  - token_quantity
+properties:
+  Token:
+    type: string
+    format: string
+  TokenCode:
+    type: string
+    format: string
+  TokenLogo:
+    type: integer
+    format: integer
+  transaction_type:
+    type: string
+    format: string

@@ -1,0 +1,70 @@
+get:
+  tags:
+    - Transaction
+  operationId: generalInfo
+  summary: Returns an array of all types of transactions
+  parameters:
+    - name: wealth_manager_id
+      in: query
+      description: Wealth Managers who triggered transaction
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: client_id
+      in: query
+      description: Client whose funds were used for the transaction
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: transaction_type
+      in: query
+      description: Type of transaction triggered
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+    - name: transaction_status
+      in: query
+      description: Status of transaction triggered; ongoing or complete.
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+  requestBody:
+    description: Requests transactions of a wealth manager by ID
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Transaction.yaml
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: ../components/schemas/Success.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '501':
+      $ref: ../components/responses/BadData.yaml
+    default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/Error.yaml

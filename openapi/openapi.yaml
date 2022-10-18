@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: SMAT API Documentation
+  description: API documentation for smat io backend
+  version: 3.0.0
+servers:
+  - url: 'https://api.example.com/'
+  - url: 'http://localhost:8080/'
+  - url: 'http://swagger.io'
+security:
+  - basicAuth: []
+tags:
+  - name: Wealth Manager
+  - name: Transaction
+  - name: Token
+paths:
+  /crypto/wealth_manager/create_address:
+    $ref: paths/crypto@wealth_manager@create_address.yaml
+  /crypto/wealth_manager/aum:
+    $ref: paths/crypto@wealth_manager@aum.yaml
+  /crypto/transaction/:
+    $ref: paths/crypto@transaction@.yaml
+  /crypto/transaction/onramp:
+    $ref: paths/crypto@transaction@onramp.yaml
+  /crypto/transaction/offramp:
+    $ref: paths/crypto@transaction@offramp.yaml
+  /crypto/transaction/swap:
+    $ref: paths/crypto@transaction@swap.yaml
+  /crypto/transaction/ongoing:
+    $ref: paths/crypto@transaction@ongoing.yaml
+  /crypto/token/price:
+    $ref: paths/crypto@token@price.yaml
+  /crypto/token/details:
+    $ref: paths/crypto@token@details.yaml
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

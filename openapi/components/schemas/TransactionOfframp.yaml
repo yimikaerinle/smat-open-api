@@ -1,0 +1,41 @@
+type: object
+required:
+  - token_id
+  - token_price
+  - fiat_amount
+  - fiat_currency
+  - client_approval
+properties:
+  transaction_id:
+    type: integer
+    format: uid
+  client_id:
+    type: integer
+    format: uid
+  wealth_manager_id:
+    type: integer
+    format: uid
+  client_approval:
+    type: integer
+    format: uid
+  bank_id:
+    type: integer
+    format: uid
+  transaction_type:
+    type: string
+    format: string
+  fiat_amount:
+    type: integer
+    format: integer
+  fiat_currency:
+    type: string
+    format: string
+  token_id:
+    type: integer
+    format: integer
+  token_price:
+    type: integer
+    format: integer
+  transaction_hex:
+    type: string
+    format: string

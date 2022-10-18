@@ -1,0 +1,33 @@
+post:
+  tags:
+    - Transaction
+  operationId: generalInfo
+  summary: Adds a new token swap transaction
+  requestBody:
+    description: Requests transactions of a wealth manager by ID
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/TransactionSwap.yaml
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: ../components/schemas/Success.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '501':
+      $ref: ../components/responses/BadData.yaml
+    default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/Error.yaml

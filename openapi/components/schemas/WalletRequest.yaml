@@ -1,0 +1,17 @@
+type: object
+properties:
+  walletAddress:
+    type: string
+    format: string
+  client_id:
+    type: string
+    format: string
+  Token:
+    type: string
+    format: string
+  TokenChain:
+    type: string
+    format: email
+  TokenCode:
+    type: string
+    format: string

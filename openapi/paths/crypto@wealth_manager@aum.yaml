@@ -1,0 +1,36 @@
+get:
+  tags:
+    - Wealth Manager
+  operationId: wealthManagerFinInfo
+  summary: Get specific financial information on a wealth manager for profile
+  parameters:
+    - name: wealth_manager_id
+      in: query
+      description: Wealth Managers unique id
+      required: true
+      explode: true
+      schema:
+        type: array
+        items:
+          type: string
+  responses:
+    '200':
+      description: Return if successful
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/WealthManagerAUM.yaml
+    '401':
+      $ref: ../components/responses/Unauthorized.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '501':
+      $ref: ../components/responses/BadData.yaml
+    default:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/responses/Error.yaml
