@@ -1,4 +1,4 @@
-# smatOpenAPI OpenAPI Definition
+# SMAT OpenAPI Definition
 
 ## Working on your OpenAPI Definition
 
